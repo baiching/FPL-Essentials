@@ -13,6 +13,7 @@ public class EmailServiceImpl implements EmailService{
     @Autowired
     private JavaMailSender mailSender;
 
+    @Autowired
     private Environment env;
 
     @Value("${spring.mail.username}")
@@ -24,7 +25,7 @@ public class EmailServiceImpl implements EmailService{
         try{
             SimpleMailMessage mailMessage = new SimpleMailMessage();
 
-            mailMessage.setFrom(env.getProperty("spring.mail.username"));
+            mailMessage.setFrom("bachmarma@gmail.com");
             mailMessage.setTo(emailDetails.getRecipient());
             mailMessage.setText(emailDetails.getMsgBody());
             mailMessage.setSubject(emailDetails.getSubject());
