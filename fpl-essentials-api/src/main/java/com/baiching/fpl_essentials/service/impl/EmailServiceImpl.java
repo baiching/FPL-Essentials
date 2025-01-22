@@ -1,17 +1,17 @@
-package com.baiching.fpl_essentials.service;
+package com.baiching.fpl_essentials.service.impl;
 
 import com.baiching.fpl_essentials.model.EmailDetails;
+import com.baiching.fpl_essentials.service.EmailService;
 import jakarta.mail.internet.MimeMessage;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.env.Environment;
-import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.stereotype.Service;
 
 @Service
-public class EmailServiceImpl implements EmailService{
+public class EmailServiceImpl implements EmailService {
     @Autowired
     private JavaMailSender mailSender;
 

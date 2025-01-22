@@ -1,7 +1,7 @@
 package com.baiching.fpl_essentials;
 
 import com.baiching.fpl_essentials.model.EmailDetails;
-import com.baiching.fpl_essentials.service.EmailServiceImpl;
+import com.baiching.fpl_essentials.service.impl.EmailServiceImpl;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.web.bind.annotation.GetMapping;
