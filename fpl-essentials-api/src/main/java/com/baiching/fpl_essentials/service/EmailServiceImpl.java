@@ -1,11 +1,13 @@
 package com.baiching.fpl_essentials.service;
 
 import com.baiching.fpl_essentials.model.EmailDetails;
+import jakarta.mail.internet.MimeMessage;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.env.Environment;
 import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
+import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -21,16 +23,18 @@ public class EmailServiceImpl implements EmailService{
 
     @Override
     public String sendSimpleEmail(EmailDetails emailDetails) {
+        MimeMessage mimeMessage = mailSender.createMimeMessage();
 
         try{
-            SimpleMailMessage mailMessage = new SimpleMailMessage();
+            //SimpleMailMessage mailMessage = new SimpleMailMessage();
+            MimeMessageHelper mimeMessageHelper = new MimeMessageHelper(mimeMessage, true);
 
-            mailMessage.setFrom("bachmarma@gmail.com");
-            mailMessage.setTo(emailDetails.getRecipient());
-            mailMessage.setText(emailDetails.getMsgBody());
-            mailMessage.setSubject(emailDetails.getSubject());
+            mimeMessageHelper.setFrom("bachmarma@gmail.com");
+            mimeMessageHelper.setTo(emailDetails.getRecipient());
+            mimeMessageHelper.setText(emailDetails.getMsgBody());
+            mimeMessageHelper.setSubject(emailDetails.getSubject());
 
-            mailSender.send(mailMessage);
+            mailSender.send(mimeMessageHelper.getMimeMessage());
 
             return "Mail sent successfully";
         }
