@@ -8,8 +8,7 @@ import java.net.MalformedURLException;
 import java.util.List;
 
 public interface FplDataSerive {
-    //List<Gameweek> getGameweekData() throws IOException;
-    Boolean getGameweekData() throws IOException;
+    List<Gameweek> getGameweekData() throws IOException;
     Boolean lastHour(Gameweek gameweek);
 
     Gameweek findByGameWeek(String gameWeekName);

@@ -30,7 +30,7 @@ public class FplDataSeriveImpl implements FplDataSerive {
     private GameWeekDeadlineRepository repository;
 
     @Override
-    public Boolean getGameweekData() throws IOException {
+    public List<Gameweek> getGameweekData() throws IOException {
         URL url = new URL("https://fantasy.premierleague.com/api/bootstrap-static/");
         Gameweek gw = new Gameweek();
 
@@ -38,7 +38,6 @@ public class FplDataSeriveImpl implements FplDataSerive {
         connection.setRequestMethod("GET");
 
         int responseCode = connection.getResponseCode();
-        System.out.println("Response code: "+ responseCode);
 
         if (responseCode == HttpURLConnection.HTTP_OK) {
 
@@ -47,31 +46,19 @@ public class FplDataSeriveImpl implements FplDataSerive {
             while (scanner.hasNext()) {
                 sb.append(scanner.nextLine());
             }
-            //System.out.println(sb);
 
             ObjectMapper objectMapper = new ObjectMapper();
-
-            //HashMap<String, Gameweek> map = objectMapper.readValue()
-            //Gameweek[] gameweeks = objectMapper.readValue(String.valueOf(sb), new TypeReference<Gameweek[]>(){});
 
             JsonNode mainNode = objectMapper.readTree(sb.toString());
             JsonNode eventsNode = mainNode.get("events");
             List<Gameweek> gameweeks = objectMapper.readValue(eventsNode.toString(), new TypeReference<List<Gameweek>>() {});
 
-            System.out.println(gameweeks);
-
-            return true;
+            return gameweeks;
 
         } else {
             System.out.println("Error in Sending Request");
-            return false;
+            return null;
         }
-
-//        repository.save(gw);
-//        System.out.println(gw.getDeadlineTime());
-        //List<Gameweek> data =  jsonNode.get("events").get("name").get("deadline_time");
-
-        //return true;
     }
 
     @Override
