@@ -15,7 +15,7 @@ public class FplDataController {
 
     @PostMapping("/seeData")
     public String getData() throws JsonProcessingException {
-        dataSerive.getGameweekData();
+        //dataSerive.getGameweekData();
 
         return "hello";
     }

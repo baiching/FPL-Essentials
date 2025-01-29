@@ -1,5 +1,7 @@
 package com.baiching.fpl_essentials.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -8,12 +10,13 @@ import lombok.Data;
 
 @Entity
 @Data
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class Gameweek {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    private String gameweekName;
-    private String deadlineTime;
+    private String name;
+    private String deadline_time;
 
 }
