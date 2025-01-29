@@ -5,10 +5,7 @@ import com.baiching.fpl_essentials.model.Gameweek;
 import com.baiching.fpl_essentials.service.FplDataSerive;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.io.IOException;
 import java.util.List;
@@ -21,5 +18,10 @@ public class FplDataController {
     @GetMapping("/seeData")
     public List<Gameweek> getData() throws IOException {
         return dataSerive.getGameweekData();
+    }
+
+    @GetMapping("/seeGameweek/{id}")
+    public Gameweek getData(@PathVariable("id") int id) throws IOException {
+        return dataSerive.getDataByGameweek(id);
     }
 }

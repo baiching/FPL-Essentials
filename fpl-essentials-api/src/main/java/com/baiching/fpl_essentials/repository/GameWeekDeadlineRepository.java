@@ -5,4 +5,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface GameWeekDeadlineRepository extends JpaRepository<Gameweek, Long> {
     Gameweek findByName(String name);
+    Gameweek findById(int id);
 }

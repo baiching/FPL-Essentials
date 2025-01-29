@@ -3,23 +3,15 @@ package com.baiching.fpl_essentials.service.impl;
 import com.baiching.fpl_essentials.model.Gameweek;
 import com.baiching.fpl_essentials.repository.GameWeekDeadlineRepository;
 import com.baiching.fpl_essentials.service.FplDataSerive;
-import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpEntity;
-import org.springframework.http.HttpHeaders;
-import org.springframework.http.HttpMethod;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
-import org.springframework.web.client.RestTemplate;
 
 import java.io.IOException;
 import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
 import java.net.URL;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Scanner;
 
@@ -71,5 +63,10 @@ public class FplDataSeriveImpl implements FplDataSerive {
     @Override
     public Gameweek findByGameWeek(String gameWeekName) {
         return repository.findByName(gameWeekName);
+    }
+
+    @Override
+    public Gameweek getDataByGameweek(int gameweekNumber) {
+        return repository.findById(gameweekNumber);
     }
 }

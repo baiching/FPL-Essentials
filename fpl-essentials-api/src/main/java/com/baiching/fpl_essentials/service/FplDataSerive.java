@@ -12,4 +12,6 @@ public interface FplDataSerive {
     Boolean lastHour(Gameweek gameweek);
 
     Gameweek findByGameWeek(String gameWeekName);
+
+    Gameweek getDataByGameweek(int gameweekNumber);
 }
