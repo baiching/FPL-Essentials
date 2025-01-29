@@ -23,3 +23,12 @@ To get data from official REST api, there are many requests:
 3. https://fantasy.premierleague.com/api/element-summary/19/ - returns data for specific player for current and upcomming gameweek
 ```
 
+# Service
+
+**FplDataServiceImpl**\
+It implements *FplDataService* interface. The purpose of this service is to get data from API and save in the database.
+
+Here, *getGameweekData()* method fetches the data from the FPL official API and returns in List<Gameweek> format.
+
+*FplDataServiceTest* class tests if the the data is returned in the intended format or if it's empty
+

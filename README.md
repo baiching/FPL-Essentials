@@ -30,10 +30,12 @@ List the technologies and frameworks you used:
 Frameworks:
 - `Spring boot`
 - `React`
-- `maven`
+- `maven`\
 Database
-- `MySql`
-
+- `MySql`\
+Test:
+- Junit5
+- Mockito
 ## Installation
 
 1. **Clone the repository:**
