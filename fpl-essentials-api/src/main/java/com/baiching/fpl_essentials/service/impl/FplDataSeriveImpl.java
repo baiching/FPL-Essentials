@@ -53,6 +53,8 @@ public class FplDataSeriveImpl implements FplDataSerive {
             JsonNode eventsNode = mainNode.get("events");
             List<Gameweek> gameweeks = objectMapper.readValue(eventsNode.toString(), new TypeReference<List<Gameweek>>() {});
 
+            repository.saveAll(gameweeks);
+
             return gameweeks;
 
         } else {
@@ -68,6 +70,6 @@ public class FplDataSeriveImpl implements FplDataSerive {
 
     @Override
     public Gameweek findByGameWeek(String gameWeekName) {
-        return repository.findByGameweek(gameWeekName);
+        return repository.findByName(gameWeekName);
     }
 }

@@ -4,5 +4,5 @@ import com.baiching.fpl_essentials.model.Gameweek;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface GameWeekDeadlineRepository extends JpaRepository<Gameweek, Long> {
-    Gameweek findByGameweek(String gameweek);
+    Gameweek findByName(String name);
 }

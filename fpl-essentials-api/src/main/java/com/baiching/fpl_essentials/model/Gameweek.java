@@ -14,8 +14,9 @@ import lombok.Data;
 public class Gameweek {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
+    private Long gameId;
 
+    private int id;
     private String name;
     private String deadline_time;
 
