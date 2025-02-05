@@ -6,7 +6,7 @@ import java.time.ZoneId;
 import java.time.ZonedDateTime;
 
 public class TimeCalculation {
-    public ZonedDateTime covertToLocalTimeZone(String dateString) {
+    public ZonedDateTime convertToLocalTimeZone(String dateString) {
         OffsetDateTime offsetDateTime = OffsetDateTime.parse(dateString);
 
         return offsetDateTime.atZoneSimilarLocal(ZoneId.systemDefault());
@@ -20,6 +20,7 @@ public class TimeCalculation {
         *duration.toMinutes() % 60;
         *duration.getSeconds() % 60;
          */
+
         return Duration.between(ZonedDateTime.now(), futureDateTime);
     }
 }
