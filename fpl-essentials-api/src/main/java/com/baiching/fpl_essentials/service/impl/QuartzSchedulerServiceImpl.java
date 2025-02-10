@@ -1,5 +1,6 @@
 package com.baiching.fpl_essentials.service.impl;
 
+import com.baiching.fpl_essentials.scheduledJobs.ScheduledJob;
 import jakarta.annotation.PostConstruct;
 import org.quartz.*;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,7 +13,7 @@ public class QuartzSchedulerServiceImpl {
 
     @PostConstruct
     public void scheduleJob() throws SchedulerException {
-        JobDetail job = JobBuilder.newJob(HelloWorldJob.class)
+        JobDetail job = JobBuilder.newJob(ScheduledJob.class)
                 .withIdentity("simpleTrigger", "group1")
                 .build();
 
