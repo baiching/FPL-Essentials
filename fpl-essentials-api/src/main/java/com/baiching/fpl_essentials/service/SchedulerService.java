@@ -1,5 +1,5 @@
 package com.baiching.fpl_essentials.service;
 
-public interface QuartzSchedulerService {
+public interface SchedulerService {
     void scheduleJob();
 }

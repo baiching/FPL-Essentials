@@ -4,15 +4,20 @@ import com.baiching.fpl_essentials.scheduledJobs.ScheduledJob;
 import jakarta.annotation.PostConstruct;
 import org.quartz.*;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.scheduling.quartz.SchedulerFactoryBean;
 import org.springframework.stereotype.Service;
 
+import java.time.ZonedDateTime;
+
 @Service
-public class QuartzSchedulerServiceImpl {
+public class SchedulerServiceImpl {
     @Autowired
-    private Scheduler scheduler;
+    private SchedulerFactoryBean schedulerFactoryBean;
 
     @PostConstruct
-    public void scheduleJob() throws SchedulerException {
+    public void scheduleJob(String jobName, ZonedDateTime time) throws SchedulerException {
+        Scheduler scheduler = schedulerFactoryBean.getScheduler();
+
         JobDetail job = JobBuilder.newJob(ScheduledJob.class)
                 .withIdentity("simpleTrigger", "group1")
                 .build();
