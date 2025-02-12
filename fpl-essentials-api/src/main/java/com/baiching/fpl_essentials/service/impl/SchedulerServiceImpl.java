@@ -14,7 +14,6 @@ public class SchedulerServiceImpl {
     @Autowired
     private SchedulerFactoryBean schedulerFactoryBean;
 
-    @PostConstruct
     public void scheduleJob(String jobName, ZonedDateTime time) throws SchedulerException {
         Scheduler scheduler = schedulerFactoryBean.getScheduler();
 

@@ -80,11 +80,7 @@
 			<version>5.15.2</version>
 			<scope>test</scope>
 		</dependency>
-		<dependency>
-			<groupId>com.baiching</groupId>
-			<artifactId>fpl-essentials</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
-		</dependency>
+
 
 	</dependencies>
 
