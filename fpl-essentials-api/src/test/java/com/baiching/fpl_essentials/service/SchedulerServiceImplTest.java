@@ -17,6 +17,7 @@ import org.springframework.scheduling.quartz.SchedulerFactoryBean;
 import java.time.ZonedDateTime;
 import java.util.Date;
 
+import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.*;
 
@@ -46,6 +47,25 @@ public class SchedulerServiceImplTest {
 
         schedulerService.scheduleJob(jobName, time);
 
+        verify(scheduler, times(1)).scheduleJob(any(JobDetail.class), any(Trigger.class));
+    }
+
+    @Test
+    void testScheduleJob_ThrowsSchedulerException() throws SchedulerException {
+        // Arrange
+        String jobName = "testJob";
+        ZonedDateTime time = ZonedDateTime.now();
+
+        // Mock the scheduler to throw an exception
+        when(scheduler.scheduleJob(any(JobDetail.class), any(Trigger.class)))
+                .thenThrow(new SchedulerException("Failed to schedule job"));
+
+        // Act & Assert
+        assertThrows(SchedulerException.class, () -> {
+            schedulerService.scheduleJob(jobName, time);
+        });
+
+        // Verify that the scheduler was called
         verify(scheduler, times(1)).scheduleJob(any(JobDetail.class), any(Trigger.class));
     }
 }
