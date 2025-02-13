@@ -2,6 +2,8 @@ package com.baiching.fpl_essentials.service.impl;
 
 import com.baiching.fpl_essentials.model.Gameweek;
 import com.baiching.fpl_essentials.repository.GameWeekDeadlineRepository;
+import com.baiching.fpl_essentials.service.SchedulerService;
+import org.quartz.SchedulerException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -13,8 +15,11 @@ public class FplDeadlineServiceImpl implements com.baiching.fpl_essentials.servi
     @Autowired
     GameWeekDeadlineRepository repository;
 
+    @Autowired
+    SchedulerService schedulerService;
+
     @Override
-    public void deadlineReminder() {
+    public void deadlineReminder() throws SchedulerException {
         List<Gameweek> overallData = repository.findAll();
 
         ZonedDateTime currentTime = ZonedDateTime.now();
@@ -33,6 +38,7 @@ public class FplDeadlineServiceImpl implements com.baiching.fpl_essentials.servi
         }
     }
 
-    private void scheduleEmail(String name, String mail, ZonedDateTime emailTime) {
+    private void scheduleEmail(String name, String mail, ZonedDateTime emailTime) throws SchedulerException {
+        schedulerService.scheduleJob(name, mail, emailTime);
     }
 }
