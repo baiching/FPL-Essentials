@@ -29,7 +29,7 @@ List the technologies and frameworks you used:
 
 Frameworks:
 - `Spring boot`
-- `React`
+- `Angular`
 - `maven`\
 Database
 - `MySql`\
