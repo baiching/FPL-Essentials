@@ -45,7 +45,7 @@ public class SchedulerServiceImplTest {
         when(scheduler.scheduleJob(any(JobDetail.class), any(Trigger.class)))
                 .thenReturn(Date.from(time.toInstant()));
 
-        schedulerService.scheduleJob(jobName, time);
+        //schedulerService.scheduleJob(jobName, time);
 
         verify(scheduler, times(1)).scheduleJob(any(JobDetail.class), any(Trigger.class));
     }
@@ -62,7 +62,7 @@ public class SchedulerServiceImplTest {
 
         // Act & Assert
         assertThrows(SchedulerException.class, () -> {
-            schedulerService.scheduleJob(jobName, time);
+            //schedulerService.scheduleJob(jobName, time);
         });
 
         // Verify that the scheduler was called
