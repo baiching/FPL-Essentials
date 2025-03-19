@@ -29,13 +29,15 @@ List the technologies and frameworks you used:
 
 Frameworks:
 - `Spring boot`
+- `Spring Security`
+- `Jwt`
 - `Angular`
 - `maven`\
 Database
 - `MySql`\
 Test:
-- Junit5
-- Mockito
+- `Junit5`
+- `Mockito`
 ## Installation
 
 1. **Clone the repository:**
