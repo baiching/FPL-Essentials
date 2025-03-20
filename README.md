@@ -81,6 +81,4 @@ Specify the license under which your project is distributed.
 
 ## Contact
 
-**Your Name** - [baichingc@gmail.com](mailto:baichingc@gmail.com)
-
-**Project Link:** [GitHub Repository](https://github.com/yourusername/your-repo-name)
+**Email** - [baichingc@gmail.com](mailto:baichingc@gmail.com)
