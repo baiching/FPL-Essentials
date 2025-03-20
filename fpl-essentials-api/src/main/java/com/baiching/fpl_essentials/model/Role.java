@@ -7,7 +7,6 @@ import lombok.NoArgsConstructor;
 @Entity
 @Table(name = "roles")
 @NoArgsConstructor
-@Data
 public class Role {
 
     @Id
@@ -19,6 +18,22 @@ public class Role {
     private ERole role_name;
 
     public Role(ERole role_name) {
+        this.role_name = role_name;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public ERole getRole_name() {
+        return role_name;
+    }
+
+    public void setRole_name(ERole role_name) {
         this.role_name = role_name;
     }
 }
