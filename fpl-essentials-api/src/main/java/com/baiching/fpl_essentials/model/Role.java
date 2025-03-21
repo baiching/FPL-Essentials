@@ -15,10 +15,10 @@ public class Role {
 
     @Enumerated(EnumType.STRING)
     @Column(length = 20)
-    private ERole role_name;
+    private ERole name;
 
-    public Role(ERole role_name) {
-        this.role_name = role_name;
+    public Role(ERole name) {
+        this.name = name;
     }
 
     public Long getId() {
@@ -29,11 +29,11 @@ public class Role {
         this.id = id;
     }
 
-    public ERole getRole_name() {
-        return role_name;
+    public ERole getName() {
+        return name;
     }
 
-    public void setRole_name(ERole role_name) {
-        this.role_name = role_name;
+    public void setName(ERole name) {
+        this.name = name;
     }
 }

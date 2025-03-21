@@ -1,18 +1,28 @@
 # This is the backend of the system
 It is divided into to main sections:
-1. Development Section
-2. Testing section
+1. [Development Section](#Development-Section)
+2. [Testing section](#Testing-section)
 
 ## Development Section
 It is broken down into layers
-
+- [packages](#Packages)
 - [controller](#Controllers)
 - [Service](#Service)
 - [Repository](#Repository)
 - [Model](#model)
 
+## Packages
+**For src/main/java**
+- `com.baiching.fpl_essentials.controller` : It contains the controllers
+- `com.baiching.fpl_essentials.service` : It contains the services
+- `com.baiching.fpl_essentials.repositor`y : It contains the repositories that is used to query through DB
+- `com.baiching.fpl_essentials.model` : It contains the entities for DB
+- `com.baiching.fpl_essentials.appconfig` : Mostly for scheduling classes
+- `com.baiching.fpl_essentials.security` : It contains a small implementation of Spring Security
+- `com.baiching.fpl_essentials.service` : Different Services that are used in the project or business logic
 
-# Controller
+## controllers
+
 *EmailController* \
 sendEmail: allows to send emails with attachments
 
