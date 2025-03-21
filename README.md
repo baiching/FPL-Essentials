@@ -1,10 +1,10 @@
 # FPL-Essentials
-Some of the esstential things that i think is necessary to get more points in my next gameweek
+Some of the essential things that i think is necessary to get more points in my next gameweek
 
 ## Table of Contents
 
-- [About the Project](#about-the-project)
-- [Features](#features)
+- [About the Project](#About the project)
+- [Features](#Features)
 - [Technologies Used](#technologies-used)
 - [Installation](#installation)
 - [Usage](#usage)
@@ -17,11 +17,11 @@ Some of the esstential things that i think is necessary to get more points in my
 
 Describe your project in detail, including its goals and motivations.
 
-## Features
+## Features (For Now)
 
 - **Reminds the players about the captaincy pick in the final hour**
-- **Good Players to pick when on budget**
-- **Recommend best cataincy pick for the upcomming week**
+- **Which are the players are picked the most based on their playing positions**[Unimplemented]
+- **Recommend the best captaincy pick for the upcoming week**[Unimplemented]
 
 ## Technologies Used
 
@@ -42,15 +42,15 @@ Test:
 
 1. **Clone the repository:**
    ```bash
-   git clone https://github.com/yourusername/your-repo-name.git
+   git clone https://github.com/baiching/FPL-Essentials.git
    ```
 2. **Navigate to the project directory:**
    ```bash
-   cd your-repo-name
+   cd fpl-essentials-api
    ```
-3. **Install dependencies (if applicable):**
+3. **Run the application:**
    ```bash
-   command-to-install-dependencies
+   mvn spring-boot:run
    ```
 
 ## Usage
@@ -58,7 +58,7 @@ Test:
 Provide instructions on how to use the project:
 
 ```bash
-command-to-run-project
+mvn spring-boot:run
 ```
 
 ## Screenshots
@@ -77,8 +77,7 @@ Contributions are welcome! Follow these steps to contribute:
 
 ## License
 
-Specify the license under which your project is distributed.
-
+MIT License
 ## Contact
 
 **Email** - [baichingc@gmail.com](mailto:baichingc@gmail.com)
