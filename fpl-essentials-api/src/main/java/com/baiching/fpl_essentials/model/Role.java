@@ -1,7 +1,6 @@
 package com.baiching.fpl_essentials.model;
 
 import jakarta.persistence.*;
-import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Entity
